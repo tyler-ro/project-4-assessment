@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import Circles from "./Circles";
+import CircleSelector from "./CircleSelector";
+import React, { Component } from "react";
+import "./App.css";
+import { useState } from "react";
 
-function App() {
+export default function App() {
+  const [Circle1, setCircle1] = useState(true);
+  const [Circle2, setCircle2] = useState(false);
+  const [Circle3, setCircle3] = useState(false);
+  const [Circle4, setCircle4] = useState(false);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header className="App-header">UNIT 4 FINAL ASSESSMENT</header>
+      <main>
+        <CircleSelector
+          Circle1={Circle1}
+          Circle2={Circle2}
+          Circle3={Circle3}
+          Circle4={Circle4}
+          setCircle1={setCircle1}
+          setCircle2={setCircle2}
+          setCircle3={setCircle3}
+          setCircle4={setCircle4}
+        />
+        <Circles
+          Circle1={Circle1}
+          Circle2={Circle2}
+          Circle3={Circle3}
+          Circle4={Circle4}
+        />
+      </main>
     </div>
   );
 }
-
-export default App;
